@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'extendables';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.label {
+  @extend .text-700;
+  font-size: 30px;
+  letter-spacing: 7px;
+  color: $todo-list-header-label;
+}
