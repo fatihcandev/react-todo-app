@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgCross(): JSX.Element {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
       <path
         fill="#494C6B"
         fillRule="evenodd"

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function SvgSun(): JSX.Element {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
       <path
         fill="#FFF"
         fillRule="evenodd"
