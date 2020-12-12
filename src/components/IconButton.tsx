@@ -2,7 +2,7 @@ import React from 'react';
 
 import Icon from './Icon';
 
-import '../styles/icon-button.scss';
+import styles from '../styles/icon-button.module.scss';
 
 interface IIconButtonProps {
   icon: string;
@@ -11,7 +11,7 @@ interface IIconButtonProps {
 
 const IconButton: React.FC<IIconButtonProps> = ({ icon, onClick }) => {
   return (
-    <button {...{ onClick }} className="icon-button">
+    <button {...{ onClick }} className={styles.container}>
       <Icon {...{ icon }} />
     </button>
   );

@@ -1,7 +1,7 @@
 @import 'variables';
 @import 'extendables';
 
-.layout {
+.mainContainer {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
@@ -12,7 +12,7 @@
   }
 }
 
-.top-section {
+.topSection {
   background: url('../assets/images/bg-mobile-light.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,7 +32,7 @@
   }
 }
 
-.bottom-section {
+.bottomSection {
   background-color: $--light-bg;
 
   &.dark {
@@ -40,7 +40,7 @@
   }
 }
 
-.container {
+.innerContainer {
   @extend .absolute;
   display: flex;
   top: 50px;
@@ -49,7 +49,7 @@
   justify-content: center;
 }
 
-.drag-drop-indicator {
+.dragDropIndicator {
   @extend .text-400;
   @extend .absolute;
   font-size: 14px;
