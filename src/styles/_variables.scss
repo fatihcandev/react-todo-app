@@ -1,12 +1,16 @@
 // Common
-$checkbox-gradient: linear-gradient(hsl(192, 100%, 67%) to hsl(280, 87%, 65%));
+$gradient-blue: hsl(192, 100%, 67%);
+$gradient-purple: hsl(280, 87%, 65%);
 $checkbox-inactive-border: hsl(270, 2%, 84%);
 $filter-active: hsl(220, 98%, 61%);
 $todo-list-header-label: hsl(0, 0%, 100%);
+$shadow: hsla(210, 8%, 62%, 0.2);
 
 // Light theme
 $--light-bg: hsl(0, 0%, 98%);
 $--light-todo-list-bg: hsl(0, 0%, 100%);
+$--light-todo-item-bg: hsl(0, 0%, 100%);
+$--light-todo-item-border: hsl(250, 4%, 68%);
 $--light-todo-text: hsl(246, 16%, 36%);
 $--light-text-hover: hsl(246, 16%, 36%);
 $--light-todo-input-text: hsl(246, 16%, 36%);
@@ -20,6 +24,8 @@ $--light-drag-drop-indicator: hsl(250, 4%, 68%);
 // Dark theme
 $--dark-bg: hsl(240, 20%, 12%);
 $--dark-todo-list-bg: hsl(235, 24%, 19%);
+$--dark-todo-item-bg: hsl(235, 24%, 19%);
+$--dark-todo-item-border: hsl(236, 23%, 77%);
 $--dark-todo-text: hsl(236, 23%, 77%);
 $--dark-text-hover: hsl(236, 23%, 77%);
 $--dark-todo-input-text: hsl(236, 23%, 77%);
