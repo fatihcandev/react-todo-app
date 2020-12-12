@@ -5,20 +5,20 @@ $filter-active: hsl(220, 98%, 61%);
 
 // Light theme
 $--light-bg: hsl(0, 0%, 98%);
-$--light-todo-board-bg: hsl(0, 0%, 100%);
+$--light-todo-list-bg: hsl(0, 0%, 100%);
 $--light-todo-text: hsl(246, 16%, 36%);
 $--light-text-hover: hsl(246, 16%, 36%);
 $--light-todo-input-text: hsl(246, 16%, 36%);
-$--light-todo-input-placeholder: hsl(270, 2%, 84%);
+$--light-todo-input-placeholder: hsl(250, 4%, 68%);
 $--light-filter-text-inactive: hsl(240, 5%, 61%);
-$--light-completed-todo-text: hsl(270, 2%, 84%);
-$--light-items-left-text: hsl(270, 2%, 84%);
-$--light-clear-text: hsl(270, 2%, 84%);
-$--light-bottom-sign: hsl(270, 2%, 84%);
+$--light-completed-todo-text: hsl(250, 4%, 68%);
+$--light-items-left-text: hsl(250, 4%, 68%);
+$--light-clear-text: hsl(250, 4%, 68%);
+$--light-drag-drop-indicator: hsl(250, 4%, 68%);
 
 // Dark theme
 $--dark-bg: hsl(240, 20%, 12%);
-$--dark-todo-board-bg: hsl(235, 24%, 19%);
+$--dark-todo-list-bg: hsl(235, 24%, 19%);
 $--dark-todo-text: hsl(236, 23%, 77%);
 $--dark-text-hover: hsl(236, 23%, 77%);
 $--dark-todo-input-text: hsl(236, 23%, 77%);
@@ -27,4 +27,10 @@ $--dark-filter-text-inactive: hsl(236, 13%, 41%);
 $--dark-completed-todo-text: hsl(238, 13%, 39%);
 $--dark-items-left-text: hsl(238, 13%, 39%);
 $--dark-clear-text: hsl(238, 13%, 39%);
-$--dark-bottom-sign: hsl(238, 13%, 39%);
+$--dark-drag-drop-indicator: hsl(238, 13%, 39%);
+
+// Breakpoints
+$sm: 'min-width: 576px';
+$md: 'min-width: 768px';
+$lg: 'min-width: 992px';
+$xl: 'min-width: 1200px';

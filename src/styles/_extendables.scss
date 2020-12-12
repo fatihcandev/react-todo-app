@@ -1,3 +1,5 @@
+@import 'fonts';
+
 .text-400 {
   font-family: 'josefin-regular';
 }
@@ -20,4 +22,8 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.border-radius {
+  border-radius: 5px;
 }

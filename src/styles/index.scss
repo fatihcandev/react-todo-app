@@ -2,6 +2,11 @@ body {
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  * {
+    transition: color 0.4s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
+  }
 }
 
 html,
@@ -127,4 +132,11 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+button {
+  border: none;
+  background: transparent;
+  &:focus {
+    outline: none;
+  }
 }
