@@ -1,0 +1,9 @@
+{
+  "extends": ["@atolye15/eslint-config"],
+  "rules": {
+    "prettier/prettier": "off",
+    "import/extensions": ["error", "never", { "svg": "always" }],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"]
+  }
+}
