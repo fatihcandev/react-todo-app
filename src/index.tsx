@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { setConfig } from 'react-hot-loader';
 
+import { ContextProvider } from './context';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles/index.scss';
@@ -13,7 +14,9 @@ setConfig({
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ContextProvider>
+      <App />
+    </ContextProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
