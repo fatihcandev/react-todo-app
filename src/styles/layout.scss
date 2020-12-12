@@ -1,0 +1,65 @@
+@import 'variables';
+@import 'extendables';
+
+.layout {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 27vh 1fr;
+
+  @media ($md) {
+    grid-template-rows: 37.5vh 1fr;
+  }
+}
+
+.top-section {
+  background: url('../assets/images/bg-mobile-light.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.dark {
+    background: url('../assets/images/bg-mobile-dark.jpg');
+  }
+
+  @media ($md) {
+    background: url('../assets/images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.dark {
+      background: url('../assets/images/bg-desktop-dark.jpg');
+    }
+  }
+}
+
+.bottom-section {
+  background-color: $--light-bg;
+
+  &.dark {
+    background-color: $--dark-bg;
+  }
+}
+
+.container {
+  @extend .absolute;
+  display: flex;
+  top: 50px;
+  left: 32px;
+  right: 32px;
+  justify-content: center;
+}
+
+.drag-drop-indicator {
+  @extend .text-400;
+  @extend .absolute;
+  font-size: 14px;
+  top: unset;
+  bottom: 75px;
+  display: flex;
+  justify-content: center;
+  color: $--light-drag-drop-indicator;
+
+  .dark {
+    color: $--dark-drag-drop-indicator;
+  }
+}
