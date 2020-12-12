@@ -1,19 +1,21 @@
 import React from 'react';
+
+import { IconName } from '../types';
 import * as Icons from './icons';
 
 interface IIconProps {
-  type: 'check' | 'cross' | 'moon' | 'sun';
+  icon: string;
 }
 
-const Icon: React.FC<IIconProps> = ({ type }) => {
-  switch (type) {
-    case 'check':
+const Icon: React.FC<IIconProps> = ({ icon }) => {
+  switch (icon) {
+    case IconName.check:
       return <Icons.Check />;
-    case 'cross':
+    case IconName.cross:
       return <Icons.Cross />;
-    case 'sun':
+    case IconName.sun:
       return <Icons.Sun />;
-    case 'moon':
+    case IconName.moon:
       return <Icons.Moon />;
     default:
       return null;
