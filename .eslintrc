@@ -5,6 +5,7 @@
     "import/extensions": ["error", "never", { "svg": "always" }],
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
