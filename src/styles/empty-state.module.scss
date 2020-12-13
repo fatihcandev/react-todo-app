@@ -19,9 +19,9 @@
   @extend .text-400;
   font-size: 25px;
   text-align: center;
-  color: --light-todo-text;
+  color: $--light-todo-text;
 
   &.dark {
-    color: --dark-todo-text;
+    color: $--dark-todo-text;
   }
 }
