@@ -11,9 +11,22 @@ interface IIconButtonProps {
 }
 
 const IconButton: React.FC<IIconButtonProps> = ({ icon, onClick, ariaLabel }) => {
+  const [clicked, setClicked] = React.useState<boolean>(false);
+
+  const handleClick = () => {
+    setClicked(true);
+    onClick();
+    setTimeout(() => setClicked(false), 500);
+  };
+
   return (
-    <button {...{ onClick }} className={styles.container} aria-label={ariaLabel}>
+    <button
+      onClick={handleClick}
+      className={`${styles.container} ${clicked && styles.clicked}`}
+      aria-label={ariaLabel}
+    >
       <Icon {...{ icon }} />
+      <span className={styles.ripple} />
     </button>
   );
 };
