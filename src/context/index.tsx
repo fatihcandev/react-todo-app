@@ -1,7 +1,6 @@
 import React, { useReducer } from 'react';
 
-export const ENABLE_DARK_MODE = 'ENABLE_DARK_MODE';
-export const DISABLE_DARK_MODE = 'DISABLE_DARK_MODE';
+export const TOGGLE_DARK_MODE = 'TOGGLE_DARK_MODE';
 
 interface IAppState {
   darkMode?: boolean;
@@ -23,15 +22,10 @@ export interface IContext<T> {
 const AppContext = React.createContext(initialState);
 const reducer = (state: IAppState, action: IAction<IAppState>): IAppState => {
   switch (action.type) {
-    case ENABLE_DARK_MODE:
+    case TOGGLE_DARK_MODE:
       return {
         ...state,
-        darkMode: true,
-      };
-    case DISABLE_DARK_MODE:
-      return {
-        ...state,
-        darkMode: false,
+        darkMode: action.data?.darkMode,
       };
     default:
       return state;
