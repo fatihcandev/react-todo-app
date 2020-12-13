@@ -142,3 +142,12 @@ input {
     outline: none;
   }
 }
+.check-icon {
+  width: 0;
+  animation: show-up 0.7s forwards 1 ease-in-out;
+  @keyframes show-up {
+    to {
+      width: 11px;
+    }
+  }
+}
