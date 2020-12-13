@@ -10,9 +10,6 @@ const useDarkMode = () => {
   const { darkMode } = state;
 
   React.useEffect(() => {
-    console.log('dark mode from context', darkMode);
-    console.log('dark mode from storage', Boolean(localStorage.getItem('darkMode')));
-    console.log('change dark mode');
     setSavedDarkMode(Boolean(localStorage.getItem('darkMode')));
   }, [darkMode]);
 
