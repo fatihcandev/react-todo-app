@@ -4,9 +4,7 @@ A todo app with dark mode support. The project is bootstrapped with [Atölye15 C
 
 [Go to the challenge](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)
 
-## 🌐 Live
-
-[Go to the live site](https://react-todo-app-ashy.vercel.app/)
+[🌐 Live](https://react-todo-app-ashy.vercel.app/)
 
 ## 🧰 Stack
 
