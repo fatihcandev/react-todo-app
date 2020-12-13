@@ -6,12 +6,16 @@
   align-items: center;
   padding: 10px;
   background-color: $--light-todo-item-bg;
+  @extend .border-radius;
+  margin-bottom: 15px;
 
   &.dark {
     background-color: $--dark-todo-item-bg;
   }
-  @extend .border-radius;
-  margin-bottom: 15px;
+
+  @media ($md) {
+    padding: 20px;
+  }
 }
 
 .input {
@@ -26,6 +30,10 @@
 
   &.dark {
     color: $--dark-todo-input-text;
+  }
+
+  @media ($md) {
+    font-size: 20px;
   }
 }
 

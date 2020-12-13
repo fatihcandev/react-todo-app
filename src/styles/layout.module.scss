@@ -54,6 +54,10 @@
   left: 32px;
   right: 32px;
   justify-content: center;
+
+  @media ($md) {
+    top: 75px;
+  }
 }
 
 .dragDropIndicator {
@@ -68,5 +72,9 @@
 
   .dark {
     color: $--dark-drag-drop-indicator;
+  }
+
+  @media ($md) {
+    bottom: 40px;
   }
 }
