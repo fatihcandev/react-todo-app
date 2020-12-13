@@ -1,0 +1,34 @@
+@import 'variables';
+@import 'extendables';
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: $--light-todo-item-bg;
+
+  &.dark {
+    background-color: $--dark-todo-item-bg;
+  }
+  @extend .border-radius;
+  margin-bottom: 15px;
+}
+
+.input {
+  @extend .text-400;
+  width: 100%;
+  padding: 5px 10px;
+  color: $--light-todo-input-text;
+
+  &::placeholder {
+    color: $--light-todo-input-placeholder;
+  }
+
+  &.dark {
+    color: $--dark-todo-input-text;
+  }
+}
+
+.invalid {
+  border: 2px solid red;
+}
