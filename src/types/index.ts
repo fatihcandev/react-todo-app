@@ -6,8 +6,7 @@ export enum IconName {
 }
 
 export interface ITodo {
+  id: string;
   label: string;
   completed: boolean;
-  onCompleteClick: () => void;
-  onDeleteClick: () => void;
 }
