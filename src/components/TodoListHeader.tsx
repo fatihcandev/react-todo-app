@@ -1,21 +1,33 @@
 import React from 'react';
 
-import { AppContext, DISABLE_DARK_MODE, ENABLE_DARK_MODE } from '../context';
+import { AppContext, TOGGLE_DARK_MODE } from '../context';
+import { useDarkMode } from '../utils';
 
 import IconButton from './IconButton';
 
 import styles from '../styles/todo-list-header.module.scss';
 
 const TodoListHeader: React.FC = () => {
-  const { dispatch, state } = React.useContext(AppContext);
-  const { darkMode } = state;
+  const { dispatch } = React.useContext(AppContext);
+  const darkMode = useDarkMode();
+
   const handleDarkModeToggle = () => {
-    dispatch({ type: darkMode ? DISABLE_DARK_MODE : ENABLE_DARK_MODE });
+    localStorage.setItem('darkMode', `${!darkMode}`);
+    dispatch({
+      type: TOGGLE_DARK_MODE,
+      data: {
+        darkMode: !darkMode,
+      },
+    });
   };
   return (
     <div className={styles.container}>
       <span className={styles.label}>TODO</span>
-      <IconButton icon={darkMode ? 'moon' : 'sun'} onClick={handleDarkModeToggle} />
+      <IconButton
+        icon={darkMode ? 'moon' : 'sun'}
+        onClick={handleDarkModeToggle}
+        ariaLabel="toggle dark mode"
+      />
     </div>
   );
 };
