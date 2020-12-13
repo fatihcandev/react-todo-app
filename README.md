@@ -6,6 +6,8 @@ A todo app with dark mode support. The project is bootstrapped with [Atölye15 C
 
 ## 🌐 Live
 
+[Go to the live site](https://react-todo-app-ashy.vercel.app/)
+
 ## 🧰 Stack
 
 - React
