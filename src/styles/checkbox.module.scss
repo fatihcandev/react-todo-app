@@ -1,0 +1,24 @@
+@import 'variables';
+
+.container {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $checkbox-inactive-border;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 15px;
+
+  &.checked {
+    background: linear-gradient($gradient-blue, $gradient-purple);
+    border: none;
+  }
+}
+
+.checkbox {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+}

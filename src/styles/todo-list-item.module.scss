@@ -1,0 +1,37 @@
+@import 'variables';
+@import 'extendables';
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: $--light-todo-item-bg;
+  border-bottom: 1px solid $--light-todo-item-border;
+
+  &:only-child,
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &.dark {
+    background-color: $--dark-todo-item-bg;
+  }
+}
+
+.label {
+  @extend .text-400;
+  color: $--light-todo-text;
+
+  &.completed {
+    text-decoration: line-through;
+    color: $--light-completed-todo-text;
+  }
+
+  &.dark {
+    color: $--dark-todo-text;
+  }
+}
+
+.deleteIcon {
+  margin-left: auto;
+}
