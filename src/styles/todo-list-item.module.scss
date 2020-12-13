@@ -2,11 +2,21 @@
 @import 'extendables';
 
 .container {
+  @extend .border-radius;
   display: flex;
   align-items: center;
   padding: 20px;
   background-color: $--light-todo-item-bg;
   border-bottom: 1px solid $--light-todo-item-border;
+  transition: transform 0.4s ease-in-out;
+  opacity: 0;
+  animation: fade-in 0.5s 1 forwards ease-in-out;
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+  cursor: pointer;
 
   &:only-child,
   &:last-child {
@@ -15,6 +25,17 @@
 
   &.dark {
     background-color: $--dark-todo-item-bg;
+  }
+
+  &.fadeAway {
+    opacity: 1;
+    transform: translateX(-90px);
+    animation: fade-away 0.4s 1 forwards ease-in-out;
+    @keyframes fade-away {
+      to {
+        opacity: 0;
+      }
+    }
   }
 }
 
@@ -29,6 +50,10 @@
 
   &.dark {
     color: $--dark-todo-text;
+  }
+
+  @media ($md) {
+    font-size: 20px;
   }
 }
 

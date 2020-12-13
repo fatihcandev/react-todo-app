@@ -5,6 +5,7 @@ import { ITodo } from '../types';
 
 const Home: React.FC = () => {
   const [todos, setTodos] = React.useState<Set<ITodo>>(new Set());
+  const [removedTodoId, setRemovedTodoId] = React.useState<string>('');
 
   const getTodos = React.useCallback(() => {
     const todoList = localStorage.getItem('todos');
@@ -25,14 +26,17 @@ const Home: React.FC = () => {
   };
 
   const handleRemoveTodo = (id: string) => {
-    todos.forEach(todo => {
-      if (todo.id === id) {
-        todos.delete(todo);
-      }
-    });
-    const newTodoList = JSON.stringify(Array.from(todos));
-    localStorage.setItem('todos', newTodoList);
-    getTodos();
+    setRemovedTodoId(id);
+    setTimeout(() => {
+      todos.forEach(todo => {
+        if (todo.id === id) {
+          todos.delete(todo);
+        }
+      });
+      const newTodoList = JSON.stringify(Array.from(todos));
+      localStorage.setItem('todos', newTodoList);
+      getTodos();
+    }, 500);
   };
 
   const handleCompleteTodo = (id: string, completed: boolean) => {
@@ -54,9 +58,11 @@ const Home: React.FC = () => {
         <TodoInput onAddTodo={handleAddToDo} />
         {todos.size > 0 && (
           <TodoList
+            {...{ removedTodoId }}
             todos={Array.from(todos)}
             onCompleteClick={handleCompleteTodo}
             onRemoveClick={handleRemoveTodo}
+            empty={todos.size === 0}
           />
         )}
       </TodoListContainer>
