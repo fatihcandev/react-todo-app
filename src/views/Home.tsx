@@ -67,7 +67,6 @@ const Home: React.FC = () => {
             todos={Array.from(todos)}
             onCompleteClick={handleCompleteTodo}
             onRemoveClick={handleRemoveTodo}
-            empty={todos.size === 0}
           />
         )}
       </TodoListContainer>

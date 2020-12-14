@@ -10,7 +10,6 @@ import styles from './TodoList.module.scss';
 interface ITodoListProps {
   todos: ITodo[];
   removedTodoId: string;
-  empty: boolean;
   onCompleteClick: (id: string, completed: boolean) => void;
   onRemoveClick: (id: string) => void;
 }
@@ -18,14 +17,13 @@ interface ITodoListProps {
 const TodoList: React.FC<ITodoListProps> = ({
   todos,
   removedTodoId,
-  empty,
   onCompleteClick,
   onRemoveClick,
 }) => {
   const darkMode = useDarkMode();
 
   return (
-    <div className={`${styles.container} ${darkMode && styles.dark} ${empty && styles.fadeAway}`}>
+    <div className={`${styles.container} ${darkMode && styles.dark}`}>
       {todos.map(({ id, label, completed }) => (
         <TodoListItem
           key={id}
