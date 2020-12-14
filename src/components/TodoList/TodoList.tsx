@@ -27,14 +27,16 @@ const TodoList: React.FC<ITodoListProps> = ({
 
   return (
     <div className={`${styles.container} ${darkMode && styles.dark}`}>
-      {todos.map(({ id, label, completed }) => (
-        <TodoListItem
-          key={id}
-          {...{ id, label, completed }}
-          removed={removedTodoId === id}
-          {...{ onCompleteClick, onRemoveClick }}
-        />
-      ))}
+      <div className={styles.listContainer}>
+        {todos.map(({ id, label, completed }) => (
+          <TodoListItem
+            key={id}
+            {...{ id, label, completed }}
+            removed={removedTodoId === id}
+            {...{ onCompleteClick, onRemoveClick }}
+          />
+        ))}
+      </div>
       <div className={`${styles.bottomSection} ${darkMode && styles.dark}`}>
         <span className={`${styles.amount} ${darkMode && styles.dark}`}>
           {todos.filter(todo => !todo.completed).length} items left
