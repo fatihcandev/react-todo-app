@@ -24,7 +24,7 @@ const TodoListHeader: React.FC = () => {
     <div className={styles.container}>
       <span className={styles.label}>TODO</span>
       <IconButton
-        icon={darkMode ? 'moon' : 'sun'}
+        icon={darkMode ? 'sun' : 'moon'}
         onClick={handleDarkModeToggle}
         ariaLabel="toggle dark mode"
       />
