@@ -4,9 +4,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   * {
-    transition: color 0.4s ease-in-out;
-    transition: background-color 0.4s ease-in-out;
-    transition: background 0.4s ease-in-out;
+    transition: color 0.4s ease;
+    transition: background-color 0.4s ease;
+    transition: background 0.4s ease;
   }
 }
 
