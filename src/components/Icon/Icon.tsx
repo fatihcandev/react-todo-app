@@ -15,7 +15,7 @@ const Icon: React.FC<IIconProps> = ({ icon }) => {
     case IconName.check:
       return <Check />;
     case IconName.cross:
-      return <Icons.Cross />;
+      return <Icons.X />;
     case IconName.sun:
       return <Icons.Sun />;
     case IconName.moon:
