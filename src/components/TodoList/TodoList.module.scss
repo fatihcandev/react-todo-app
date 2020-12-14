@@ -14,3 +14,28 @@
     background-color: $--dark-todo-list-bg;
   }
 }
+
+.bottomSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+  .amount {
+    @extend .text-400;
+    color: $--light-items-left-text;
+
+    &.dark {
+      color: $--dark-items-left-text;
+    }
+  }
+
+  .clear {
+    @extend .text-400;
+    color: $--light-clear-text;
+
+    &.dark {
+      color: $--dark-clear-text;
+    }
+  }
+}

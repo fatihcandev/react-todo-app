@@ -19,15 +19,19 @@ const Home: React.FC = () => {
     }
   }, []);
 
+  const refreshTodos = (newTodos: ITodo[]) => {
+    const newTodoList = JSON.stringify(newTodos);
+    localStorage.setItem('todos', newTodoList);
+    getTodos();
+  };
+
   React.useEffect(() => {
     getTodos();
   }, [getTodos]);
 
   const handleAddToDo = (todo: ITodo) => {
     setTodos(prevTodos => prevTodos.add(todo));
-    const newTodoList = JSON.stringify(Array.from(todos));
-    localStorage.setItem('todos', newTodoList);
-    getTodos();
+    refreshTodos(Array.from(todos));
   };
 
   const handleRemoveTodo = (id: string) => {
@@ -38,9 +42,7 @@ const Home: React.FC = () => {
           todos.delete(todo);
         }
       });
-      const newTodoList = JSON.stringify(Array.from(todos));
-      localStorage.setItem('todos', newTodoList);
-      getTodos();
+      refreshTodos(Array.from(todos));
     }, 500);
   };
 
@@ -50,10 +52,13 @@ const Home: React.FC = () => {
     if (todo) {
       const index = todoArr.indexOf(todo);
       todoArr.splice(index, 1, { ...todo, completed });
-      const newTodoList = JSON.stringify(todoArr);
-      localStorage.setItem('todos', newTodoList);
-      getTodos();
+      refreshTodos(todoArr);
     }
+  };
+
+  const handleClearCompleted = () => {
+    const filteredTodoArr = Array.from(todos).filter(todo => !todo.completed);
+    refreshTodos(filteredTodoArr);
   };
 
   return (
@@ -67,6 +72,7 @@ const Home: React.FC = () => {
             todos={Array.from(todos)}
             onCompleteClick={handleCompleteTodo}
             onRemoveClick={handleRemoveTodo}
+            onClearCompletedClick={handleClearCompleted}
           />
         )}
       </TodoListContainer>
