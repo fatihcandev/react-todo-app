@@ -58,4 +58,14 @@
 
 .deleteIcon {
   margin-left: auto;
+
+  button {
+    color: $--light-todo-text;
+  }
+
+  &.dark {
+    button {
+      color: $--dark-todo-text;
+    }
+  }
 }

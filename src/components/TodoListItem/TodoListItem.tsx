@@ -30,7 +30,7 @@ const TodoListItem: React.FC<ITodoListItemProps> = ({
     <div className={`${styles.container} ${darkMode && styles.dark} ${removed && styles.fadeAway}`}>
       <Checkbox checked={completed} onChange={completed => onCompleteClick(id, completed)} />
       <span className={`${styles.label} ${completed && styles.completed}`}>{label}</span>
-      <div className={styles.deleteIcon}>
+      <div className={`${styles.deleteIcon} ${darkMode && styles.dark}`}>
         <IconButton icon="cross" onClick={() => onRemoveClick(id)} ariaLabel="remove todo item" />
       </div>
     </div>
