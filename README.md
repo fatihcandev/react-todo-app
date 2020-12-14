@@ -12,3 +12,9 @@ A todo app with dark mode support. The project is bootstrapped with [Atölye15 C
 - SCSS
 - CSS Modules
 - TypeScript
+
+## ✔️ TODO
+- [ ] Fix the dark mode issue
+- [ ] Make the todo list rearrangable by drag and drop
+- [ ] Fix the UI on mobile
+
