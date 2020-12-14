@@ -17,11 +17,15 @@
 .label {
   margin-top: 25px;
   @extend .text-400;
-  font-size: 25px;
+  font-size: 18px;
   text-align: center;
   color: $--light-todo-text;
 
   &.dark {
     color: $--dark-todo-text;
+  }
+
+  @media ($md) {
+    font-size: 20px;
   }
 }
