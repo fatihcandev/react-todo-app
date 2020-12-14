@@ -1,7 +1,12 @@
 import React from 'react';
 
-import { Layout, TodoInput, TodoList, TodoListContainer, TodoListHeader } from '../components';
 import { ITodo } from '../types';
+
+import { Layout } from '../components/Layout';
+import { TodoListContainer } from '../components/TodoListContainer';
+import { TodoListHeader } from '../components/TodoListHeader';
+import { TodoInput } from '../components/TodoInput';
+import { TodoList } from '../components/TodoList';
 
 const Home: React.FC = () => {
   const [todos, setTodos] = React.useState<Set<ITodo>>(new Set());

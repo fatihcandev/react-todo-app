@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { ITodo } from '../types';
-import { useDarkMode } from '../utils';
+import { ITodo } from '../../types';
+import { useDarkMode } from '../../utils';
 
-import styles from '../styles/todo-input.module.scss';
+import styles from './TodoInput.module.scss';
 
 interface ITodoListInputProps {
   onAddTodo: (todo: ITodo) => void;

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Icon from './Icon';
+import { Icon } from '../Icon';
 
-import styles from '../styles/icon-button.module.scss';
+import styles from './IconButton.module.scss';
 
 interface IIconButtonProps {
   icon: string;

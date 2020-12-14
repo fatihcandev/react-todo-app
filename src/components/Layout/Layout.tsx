@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { useDarkMode } from '../utils';
+import { useDarkMode } from '../../utils';
 
-import TodosEmptyState from './TodosEmptyState';
+import { EmptyState } from '../EmptyState';
 
-import styles from '../styles/layout.module.scss';
+import styles from './Layout.module.scss';
 
 interface ILayoutProps {
   todoAmount: number;
@@ -17,7 +17,7 @@ const Layout: React.FC<ILayoutProps> = ({ todoAmount, children }) => {
     <main className={styles.mainContainer}>
       <div className={`${styles.topSection} ${darkMode && styles.dark}`} />
       <div className={`${styles.bottomSection} ${darkMode && styles.dark}`}>
-        {todoAmount === 0 && <TodosEmptyState />}
+        {todoAmount === 0 && <EmptyState />}
       </div>
       <div className={styles.innerContainer}>{children}</div>
       <span className={`${styles.dragDropIndicator} ${darkMode && styles.dark}`}>

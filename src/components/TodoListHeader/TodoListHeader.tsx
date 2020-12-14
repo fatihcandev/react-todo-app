@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { AppContext, TOGGLE_DARK_MODE } from '../context';
-import { useDarkMode } from '../utils';
+import { AppContext, TOGGLE_DARK_MODE } from '../../context';
+import { useDarkMode } from '../../utils';
 
-import IconButton from './IconButton';
+import { IconButton } from '../IconButton';
 
-import styles from '../styles/todo-list-header.module.scss';
+import styles from './TodoListHeader.module.scss';
 
 const TodoListHeader: React.FC = () => {
   const { dispatch } = React.useContext(AppContext);

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Icon from './Icon';
+import { Icon } from '../Icon';
 
-import styles from '../styles/checkbox.module.scss';
+import styles from './Checkbox.module.scss';
 
 interface ICheckboxProps {
   checked: boolean;

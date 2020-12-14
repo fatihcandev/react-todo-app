@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { useDarkMode } from '../utils';
+import { useDarkMode } from '../../utils';
 
-import Checkbox from './Checkbox';
-import IconButton from './IconButton';
+import { Checkbox } from '../Checkbox';
+import { IconButton } from '../IconButton';
 
-import styles from '../styles/todo-list-item.module.scss';
+import styles from './TodoListItem.module.scss';
 
 interface ITodoListItemProps {
   id: string;

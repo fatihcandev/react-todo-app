@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { useDarkMode } from '../utils';
+import { useDarkMode } from '../../utils';
 
-import SvgEmptyState from './illustrations/EmptyState';
+import SvgEmptyState from '../illustrations/EmptyState';
 
-import styles from '../styles/empty-state.module.scss';
+import styles from './EmptyState.module.scss';
 
 const TodosEmptyState: React.FC = () => {
   const darkMode = useDarkMode();

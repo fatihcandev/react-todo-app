@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { ITodo } from '../types';
-import { useDarkMode } from '../utils';
+import { ITodo } from '../../types';
+import { useDarkMode } from '../../utils';
 
-import TodoListItem from './TodoListItem';
+import { TodoListItem } from '../TodoListItem';
 
-import styles from '../styles/todo-list.module.scss';
+import styles from './TodoList.module.scss';
 
 interface ITodoListProps {
   todos: ITodo[];
