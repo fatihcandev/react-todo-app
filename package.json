@@ -26,11 +26,11 @@
     "lint": "yarn run lint:ts && yarn run lint:css",
     "lint:ts": "tsc && yarn lint:eslint",
     "lint:eslint": "eslint src/**/*.{ts,tsx}",
-    "lint:css": "stylelint --syntax scss \"src/**/*.scss\"",
+    "lint:css": "stylelint --syntax scss src/**/*.scss",
     "format": "yarn run format:ts && yarn run format:css",
     "format:ts": "prettier --write src/**/*.{ts,tsx} && yarn lint:eslint --fix",
     "format:check": "prettier -c src/**/*.{ts,tsx}",
-    "format:css": "stylelint --fix --syntax scss \"src/**/*.scss\""
+    "format:css": "stylelint --fix --syntax scss src/**/*.scss"
   },
   "eslintConfig": {
     "extends": [
