@@ -2,7 +2,6 @@
 @import '../../styles/extendables';
 
 .container {
-  @extend .border-radius;
   display: flex;
   align-items: center;
   padding: 20px;
