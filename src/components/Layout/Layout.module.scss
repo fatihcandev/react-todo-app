@@ -13,12 +13,12 @@
 }
 
 .topSection {
-  background: url('../assets/images/bg-mobile-light.jpg');
+  background: url('../../assets/images/bg-mobile-light.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 
   &.dark {
-    background: url('../assets/images/bg-mobile-dark.jpg');
+    background: url('../../assets/images/bg-mobile-dark.jpg');
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -29,7 +29,7 @@
     background-size: cover;
 
     &.dark {
-      background: url('../assets/images/bg-desktop-dark.jpg');
+      background: url('../../assets/images/bg-desktop-dark.jpg');
       background-repeat: no-repeat;
       background-size: cover;
     }
