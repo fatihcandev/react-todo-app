@@ -17,10 +17,6 @@
 .listContainer {
   max-height: 300px;
   overflow-y: auto;
-
-  @media ($md) {
-    max-height: 400px;
-  }
 }
 
 .bottomSection {
