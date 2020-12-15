@@ -1,9 +1,22 @@
 import React from 'react';
 
+import './Check.scss';
+
 function SvgCheck() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9" className="check-icon">
-      <path fill="none" stroke="#FFF" strokeWidth={2} d="M1 4.304L3.696 7l6-6" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#fff"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="check-icon"
+    >
+      <polyline points="20 6 9 17 4 12" width="5" />
     </svg>
   );
 }
