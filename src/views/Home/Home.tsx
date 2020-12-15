@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useDarkMode } from '../../utils';
 import { ITodo, TodoStatus } from '../../types';
 
 import { Layout } from '../../components/Layout';
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
   const [removedTodoId, setRemovedTodoId] = React.useState<string>('');
   const [selectedFilter, setSelectedFilter] = React.useState<TodoStatus>(TodoStatus.all);
   const [filteredTodos, setFilteredTodos] = React.useState<ITodo[]>([]);
+  const darkMode = useDarkMode();
 
   const getTodos = React.useCallback(() => {
     const todoList = localStorage.getItem('todos');
@@ -98,7 +100,7 @@ const Home: React.FC = () => {
             onFilterCompleted={handleFilterCompleted}
           />
         )}
-        <div className={styles.filterSection}>
+        <div className={`${styles.filterSection} ${darkMode && styles.dark}`}>
           <Filter
             onFilterAll={handleFilterAll}
             onFilterActive={handleFilterActive}
