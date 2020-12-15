@@ -14,4 +14,8 @@
   &:hover {
     background-color: hsla(0, 0%, 50%, 0.3);
   }
+
+  &:focus {
+    background-color: transparent;
+  }
 }
