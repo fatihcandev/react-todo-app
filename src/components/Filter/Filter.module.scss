@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+@import '../../styles/extendables';
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.filter {
+  @extend .text-700;
+  font-size: 15px;
+  color: $--light-filter-text-inactive;
+
+  &.dark {
+    color: $--dark-items-left-text;
+  }
+
+  &.selected {
+    color: $filter-active;
+  }
+}

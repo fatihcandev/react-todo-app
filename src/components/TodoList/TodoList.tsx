@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { ITodo } from '../../types';
+import { ITodo, TodoStatus } from '../../types';
 import { useDarkMode } from '../../utils';
 
 import { Button } from '../Button';
+import { Filter } from '../Filter';
 import { TodoListItem } from '../TodoListItem';
 
 import styles from './TodoList.module.scss';
@@ -11,17 +12,25 @@ import styles from './TodoList.module.scss';
 interface ITodoListProps {
   todos: ITodo[];
   removedTodoId: string;
+  selectedFilter: TodoStatus;
   onCompleteClick: (id: string, completed: boolean) => void;
   onRemoveClick: (id: string) => void;
   onClearCompletedClick: () => void;
+  onFilterAll: () => void;
+  onFilterActive: () => void;
+  onFilterCompleted: () => void;
 }
 
 const TodoList: React.FC<ITodoListProps> = ({
   todos,
   removedTodoId,
+  selectedFilter,
   onCompleteClick,
   onRemoveClick,
   onClearCompletedClick,
+  onFilterAll,
+  onFilterActive,
+  onFilterCompleted,
 }) => {
   const darkMode = useDarkMode();
 
@@ -41,6 +50,7 @@ const TodoList: React.FC<ITodoListProps> = ({
         <span className={`${styles.amount} ${darkMode && styles.dark}`}>
           {todos.filter(todo => !todo.completed).length} items left
         </span>
+        <Filter {...{ onFilterAll, onFilterActive, onFilterCompleted, selectedFilter }} />
         <Button
           onClick={onClearCompletedClick}
           className={`${styles.clear} ${darkMode && styles.dark}`}

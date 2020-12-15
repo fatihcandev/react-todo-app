@@ -10,3 +10,9 @@ export interface ITodo {
   label: string;
   completed: boolean;
 }
+
+export enum TodoStatus {
+  all,
+  active,
+  completed,
+}

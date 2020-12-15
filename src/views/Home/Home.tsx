@@ -1,16 +1,21 @@
 import React from 'react';
 
-import { ITodo } from '../types';
+import { ITodo, TodoStatus } from '../../types';
 
-import { Layout } from '../components/Layout';
-import { TodoListContainer } from '../components/TodoListContainer';
-import { TodoListHeader } from '../components/TodoListHeader';
-import { TodoInput } from '../components/TodoInput';
-import { TodoList } from '../components/TodoList';
+import { Layout } from '../../components/Layout';
+import { TodoListContainer } from '../../components/TodoListContainer';
+import { TodoListHeader } from '../../components/TodoListHeader';
+import { TodoInput } from '../../components/TodoInput';
+import { TodoList } from '../../components/TodoList';
+import { Filter } from '../../components/Filter';
+
+import styles from './Home.module.scss';
 
 const Home: React.FC = () => {
   const [todos, setTodos] = React.useState<Set<ITodo>>(new Set());
   const [removedTodoId, setRemovedTodoId] = React.useState<string>('');
+  const [selectedFilter, setSelectedFilter] = React.useState<TodoStatus>(TodoStatus.all);
+  const [filteredTodos, setFilteredTodos] = React.useState<ITodo[]>([]);
 
   const getTodos = React.useCallback(() => {
     const todoList = localStorage.getItem('todos');
@@ -61,6 +66,21 @@ const Home: React.FC = () => {
     refreshTodos(filteredTodoArr);
   };
 
+  const handleFilterAll = () => {
+    setSelectedFilter(TodoStatus.all);
+    setFilteredTodos([]);
+  };
+
+  const handleFilterActive = () => {
+    setSelectedFilter(TodoStatus.active);
+    setFilteredTodos(Array.from(todos).filter(todo => !todo.completed));
+  };
+
+  const handleFilterCompleted = () => {
+    setSelectedFilter(TodoStatus.completed);
+    setFilteredTodos(Array.from(todos).filter(todo => todo.completed));
+  };
+
   return (
     <Layout todoAmount={todos.size}>
       <TodoListContainer>
@@ -68,13 +88,24 @@ const Home: React.FC = () => {
         <TodoInput onAddTodo={handleAddToDo} />
         {todos.size > 0 && (
           <TodoList
-            {...{ removedTodoId }}
-            todos={Array.from(todos)}
+            {...{ removedTodoId, selectedFilter }}
+            todos={filteredTodos.length > 0 ? filteredTodos : Array.from(todos)}
             onCompleteClick={handleCompleteTodo}
             onRemoveClick={handleRemoveTodo}
             onClearCompletedClick={handleClearCompleted}
+            onFilterAll={handleFilterAll}
+            onFilterActive={handleFilterActive}
+            onFilterCompleted={handleFilterCompleted}
           />
         )}
+        <div className={styles.filterSection}>
+          <Filter
+            onFilterAll={handleFilterAll}
+            onFilterActive={handleFilterActive}
+            onFilterCompleted={handleFilterCompleted}
+            {...{ selectedFilter }}
+          />
+        </div>
       </TodoListContainer>
     </Layout>
   );

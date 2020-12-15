@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+@import '../../styles/extendables';
+
+.filterSection {
+  @extend .border-radius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background-color: $--light-todo-list-bg;
+  box-shadow: $shadow 0px 8px 24px;
+
+  &.dark {
+    background-color: $--dark-todo-list-bg;
+  }
+
+  @media ($md) {
+    display: none;
+  }
+}
