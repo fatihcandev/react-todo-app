@@ -50,7 +50,9 @@ const TodoList: React.FC<ITodoListProps> = ({
         <span className={`${styles.amount} ${darkMode && styles.dark}`}>
           {todos.filter(todo => !todo.completed).length} items left
         </span>
-        <Filter {...{ onFilterAll, onFilterActive, onFilterCompleted, selectedFilter }} />
+        <div className={styles.filterSection}>
+          <Filter {...{ onFilterAll, onFilterActive, onFilterCompleted, selectedFilter }} />
+        </div>
         <Button
           onClick={onClearCompletedClick}
           className={`${styles.clear} ${darkMode && styles.dark}`}
