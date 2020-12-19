@@ -19,6 +19,15 @@
   overflow-y: auto;
 }
 
+.draggableItem {
+  border-bottom: 1px solid $--light-todo-item-border;
+
+  &:only-child,
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
 .bottomSection {
   display: flex;
   align-items: center;

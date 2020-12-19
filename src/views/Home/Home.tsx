@@ -1,7 +1,8 @@
 import React from 'react';
+import { DropResult } from 'react-beautiful-dnd';
 
 import { useDarkMode } from '../../utils';
-import { ITodo, TodoStatus } from '../../types';
+import { ITodo, TodoFilter } from '../../types';
 
 import { Layout } from '../../components/Layout';
 import { TodoListContainer } from '../../components/TodoListContainer';
@@ -15,7 +16,7 @@ import styles from './Home.module.scss';
 const Home: React.FC = () => {
   const [todos, setTodos] = React.useState<Set<ITodo>>(new Set());
   const [removedTodoId, setRemovedTodoId] = React.useState<string>('');
-  const [selectedFilter, setSelectedFilter] = React.useState<TodoStatus>(TodoStatus.all);
+  const [selectedFilter, setSelectedFilter] = React.useState<TodoFilter>(TodoFilter.all);
   const [filteredTodos, setFilteredTodos] = React.useState<ITodo[]>([]);
   const darkMode = useDarkMode();
 
@@ -69,18 +70,29 @@ const Home: React.FC = () => {
   };
 
   const handleFilterAll = () => {
-    setSelectedFilter(TodoStatus.all);
+    setSelectedFilter(TodoFilter.all);
     setFilteredTodos([]);
   };
 
   const handleFilterActive = () => {
-    setSelectedFilter(TodoStatus.active);
+    setSelectedFilter(TodoFilter.active);
     setFilteredTodos(Array.from(todos).filter(todo => !todo.completed));
   };
 
   const handleFilterCompleted = () => {
-    setSelectedFilter(TodoStatus.completed);
+    setSelectedFilter(TodoFilter.completed);
     setFilteredTodos(Array.from(todos).filter(todo => todo.completed));
+  };
+
+  const handleDragDropEnd = (result: DropResult) => {
+    const todoArr = Array.from(todos);
+    const oldIndex = result.source.index;
+    const newIndex = result.destination?.index;
+    const [reorderedItem] = todoArr.splice(oldIndex, 1);
+    if (newIndex) {
+      todoArr.splice(newIndex, 0, reorderedItem);
+      refreshTodos(todoArr);
+    }
   };
 
   return (
@@ -98,6 +110,7 @@ const Home: React.FC = () => {
             onFilterAll={handleFilterAll}
             onFilterActive={handleFilterActive}
             onFilterCompleted={handleFilterCompleted}
+            onDragEnd={handleDragDropEnd}
           />
         )}
         <div className={`${styles.filterSection} ${darkMode && styles.dark}`}>

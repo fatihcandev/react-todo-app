@@ -6,7 +6,6 @@
   align-items: center;
   padding: 20px;
   background-color: $--light-todo-item-bg;
-  border-bottom: 1px solid $--light-todo-item-border;
   transition: transform 0.4s ease-in-out;
   opacity: 0;
   animation: fade-in 0.5s 1 forwards ease-in-out;
@@ -16,11 +15,6 @@
     }
   }
   cursor: pointer;
-
-  &:only-child,
-  &:last-child {
-    border-bottom: 0;
-  }
 
   &.dark {
     background-color: $--dark-todo-item-bg;
