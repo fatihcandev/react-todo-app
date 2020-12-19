@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TodoStatus } from '../../types';
+import { TodoFilter } from '../../types';
 import { useDarkMode } from '../../utils';
 
 import { Button } from '../Button';
@@ -11,7 +11,7 @@ interface IFilterProps {
   onFilterAll: () => void;
   onFilterActive: () => void;
   onFilterCompleted: () => void;
-  selectedFilter: TodoStatus;
+  selectedFilter: TodoFilter;
 }
 
 const Filter: React.FC<IFilterProps> = ({
@@ -26,7 +26,7 @@ const Filter: React.FC<IFilterProps> = ({
       <Button
         onClick={onFilterAll}
         className={`${styles.filter} ${darkMode && styles.dark} ${
-          selectedFilter === TodoStatus.all && styles.selected
+          selectedFilter === TodoFilter.all && styles.selected
         }`}
       >
         All
@@ -34,7 +34,7 @@ const Filter: React.FC<IFilterProps> = ({
       <Button
         onClick={onFilterActive}
         className={`${styles.filter} ${darkMode && styles.dark} ${
-          selectedFilter === TodoStatus.active && styles.selected
+          selectedFilter === TodoFilter.active && styles.selected
         }`}
       >
         Active
@@ -42,7 +42,7 @@ const Filter: React.FC<IFilterProps> = ({
       <Button
         onClick={onFilterCompleted}
         className={`${styles.filter} ${darkMode && styles.dark} ${
-          selectedFilter === TodoStatus.completed && styles.selected
+          selectedFilter === TodoFilter.completed && styles.selected
         }`}
       >
         Completed

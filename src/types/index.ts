@@ -11,7 +11,7 @@ export interface ITodo {
   completed: boolean;
 }
 
-export enum TodoStatus {
+export enum TodoFilter {
   all,
   active,
   completed,
