@@ -57,7 +57,6 @@ const TodoList: React.FC<ITodoListProps> = ({
                       className={styles.draggableItem}
                     >
                       <TodoListItem
-                        key={id}
                         removed={removedTodoId === id}
                         {...{ id, label, completed }}
                         {...{ onCompleteClick, onRemoveClick }}
